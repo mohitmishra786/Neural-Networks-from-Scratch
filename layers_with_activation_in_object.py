@@ -3,7 +3,11 @@
 # batch size of 32 is pretty common 
 
 import numpy as np
-np.random.seed(0)
+import nnfs
+from nnfs.datasets import spiral_data
+
+# for setting default datatype, as numpy messes it up sometime
+nnfs.init() 
 
 # INPUTS
 X = [[1 , 2 , 3 , 2.5],
@@ -20,6 +24,8 @@ X = [[1 , 2 , 3 , 2.5],
    performing operation on it.
 '''
 
+# making datasets
+X , y = spiral_data(100 , 3) # 100 features set for 3 classes
 
 # Lets make object of layers
 class Layer_Dense:
@@ -39,9 +45,10 @@ class Activation_ReLU:
     def forward(self , inputs):
         self.output = np.maximum(0 , inputs)
         
-layer1 = Layer_Dense(4 , 5)
-layer2 = Layer_Dense(5 , 2)
+layer1 = Layer_Dense(2 , 5)
+layer2 = Layer_Dense(5, 2)
+activation_1 = Activation_ReLU()
 layer1.forward(X)
-print(layer1.output)
-layer2.forward(layer1.output)
+activation_1.forward(layer1.output)
+layer2.forward(activation_1.output)
 print(layer2.output)
