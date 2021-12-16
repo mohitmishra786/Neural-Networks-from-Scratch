@@ -13,3 +13,20 @@ Ex- You can take an example by trying to fit linear line into sine function.
 - If we will have more neuron in activation layers then it will be more effective and will be able to fit into data points much more easily than with less neurons activation layers
 - In order to non-linear equation we need to have more hidden layers than usual.
 '''
+
+# ReLU (Rectified Linear Unit)
+
+import numpy as np
+np.random.seed(0)
+
+inputs = [0 , 2 , -1 , 3.3 , -2.7 , 1.1 , 2.2 , -100]
+outputs = []
+
+for i in inputs:
+    if i > 0:
+        outputs.append(i)
+    else:
+        outputs.append(0)
+print(outputs)
+
+inputs = []
