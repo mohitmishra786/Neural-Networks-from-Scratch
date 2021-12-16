@@ -9,4 +9,7 @@ Ans- Let's say we are not using any activation function then we will be having b
 which will be giving simply input without altering it, but this is not ideal for fitting those data points which are not 
 speaded linearly. For that,  we have to use some non linear activation function so that we can alter the input values accordingly.
 Ex- You can take an example by trying to fit linear line into sine function.
+
+- If we will have more neuron in activation layers then it will be more effective and will be able to fit into data points much more easily than with less neurons activation layers
+- In order to non-linear equation we need to have more hidden layers than usual.
 '''
