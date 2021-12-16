@@ -31,8 +31,8 @@ for i in inputs:
     '''
     We can also use max function
     '''
-
     outputs.append(max(0 , i))
+    
 print(outputs)
 
 inputs = []
